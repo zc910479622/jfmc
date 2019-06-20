@@ -1,0 +1,183 @@
+﻿body {
+    background: url(../images/index1_bg.jpg) left top no-repeat;
+    color: #4788fb;
+    overflow: hidden;
+}
+
+#divTitle {
+    position: absolute;
+    left: 276px;
+    top: 38px;
+    font-size: 2.5em;
+    font-weight: bold;
+    font-family: Arial, 宋体, sans-serif
+}
+
+* {
+    list-style: none;
+}
+
+#divArea1,
+#divArea2,
+#divArea3,
+#divArea4,
+#divArea5,
+#divArea6,
+#divArea7,
+#divArea8 {
+    position: absolute;
+    box-sizing: border-box;
+    border: 1px solid #2C58A6;
+}
+
+#divArea1 {
+    top: 770px;
+    left: 35px;
+    width: 300px;
+    height: 250px;
+}
+
+#divArea2 {
+    top: 770px;
+    left: 385px;
+    width: 300px;
+    height: 250px;
+}
+
+#divArea3 {
+    top: 770px;
+    left: 735px;
+    width: 300px;
+    height: 250px;
+}
+
+#divArea4 {
+    top: 770px;
+    left: 1085px;
+    width: 300px;
+    height: 250px;
+}
+
+#divArea5 {
+    top: 150px;
+    left: 35px;
+    width: 350px;
+    height: 570px;
+}
+
+#divArea6 {
+    top: 150px;
+    left: 435px;
+    width: 550px;
+    height: 570px;
+}
+
+#divArea7 {
+    top: 150px;
+    left: 1035px;
+    width: 350px;
+    height: 570px;
+}
+
+#divArea8 {
+    top: 150px;
+    left: 1425px;
+    width: 460px;
+    height: 870px;
+}
+
+.chart8Ui {
+    width: 100%;
+    height: 80%;
+    padding-left: 0;
+    margin-bottom: 0;
+    color: #FFF;
+}
+
+.chart8Ui > li:nth-of-type(odd) {
+    float: left;
+    width: 60%;
+    height: 33%;
+}
+
+.chart8Ui > li:nth-of-type(odd) > p {
+    width: 50%;
+}
+
+.chart8Ui > li:nth-of-type(even) {
+    float: left;
+    width: 40%;
+    height: 33%;
+}
+
+.chart8Ui > li:nth-of-type(even) > p {
+    width: 95%;
+}
+
+
+/*设备实时状态*/
+#chart81 > .piclist > div {
+    width: 50%;
+    height: 33%;
+    float: left;
+}
+
+.echart-box{
+    width: 100%;
+    height: 60%;
+}
+
+.piclist{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    visibility:hidden
+}
+
+.active {
+    visibility: visible;
+}
+/*表格*/
+
+table, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0px;
+    text-align: center
+}
+
+table {
+    width: 100%;
+}
+
+table thead th {
+    color: #FFF;
+    background-color: #4788fb;
+    height: 2%;
+}
+
+table th, table td {
+    text-align: center;
+    line-height: 30px;
+    margin: auto 2%;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#tableId {
+    table-layout: fixed;
+}
+
+#tableId tbody td {
+    white-space: nowrap
+}

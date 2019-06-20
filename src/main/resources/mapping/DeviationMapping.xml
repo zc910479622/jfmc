@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jinfei.jfmc.dao.DeviationMapper" >
+    <resultMap id="BaseResultMap" type="com.jinfei.jfmc.model.Deviation" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="GeneralTable" property="generalTable" jdbcType="DOUBLE" />
+        <result column="GeneralTableNo" property="generalTableNo" jdbcType="VARCHAR" />
+        <result column="subTable" property="subTable" jdbcType="DOUBLE" />
+        <result column="RecordDate" property="recordDate" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        GeneralTable,GeneralTableNo,subTable,RecordDate
+    </sql>
+    <select id="getPianCha" resultMap="BaseResultMap">
+        SELECT
+          <include refid="Base_Column_List"/>
+        FROM
+          deviation
+        WHERE
+        DATE_SUB(CURDATE(),INTERVAL 6 DAY) &lt;= DATE(RecordDate)
+    </select>
+</mapper>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jinfei.jfmc.dao.WeatherMapper" >
+  <resultMap id="BaseResultMap" type="com.jinfei.jfmc.model.Weather" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="wenduNow" property="wendunow" jdbcType="INTEGER" />
+    <result column="wenduMin" property="wendumin" jdbcType="INTEGER" />
+    <result column="wenduMax" property="wendumax" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="shidu" property="shidu" jdbcType="INTEGER" />
+    <result column="pm25" property="pm25" jdbcType="INTEGER" />
+    <result column="pm10" property="pm10" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, city, wenduNow, wenduMin, wenduMax, type, shidu, pm25, pm10
+  </sql>
+  <select id="getWeatherData" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from weather
+    order by id desc limit 1
+  </select>
+</mapper>

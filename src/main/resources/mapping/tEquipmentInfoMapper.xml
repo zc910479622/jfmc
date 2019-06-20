@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jinfei.jfmc.dao.tEquipmentInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.jinfei.jfmc.model.tEquipmentInfo" >
+    <id column="equip_no" property="equipNo" jdbcType="VARCHAR" />
+    <result column="equip_name" property="equipName" jdbcType="VARCHAR" />
+    <result column="equip_type_id" property="equipTypeId" jdbcType="INTEGER" />
+    <result column="proce_code" property="proceCode" jdbcType="VARCHAR" />
+    <result column="proce_name" property="proceName" jdbcType="VARCHAR" />
+    <result column="proce_desc" property="proceDesc" jdbcType="VARCHAR" />
+    <result column="use_company" property="useCompany" jdbcType="VARCHAR" />
+    <result column="use_dept" property="useDept" jdbcType="VARCHAR" />
+    <result column="use_date" property="useDate" jdbcType="VARCHAR" />
+    <result column="equip_importance" property="equipImportance" jdbcType="VARCHAR" />
+    <result column="remarks" property="remarks" jdbcType="VARCHAR" />
+    <result column="org_no" property="orgNo" jdbcType="VARCHAR" />
+    <result column="production_monitoring_flag" property="productionMonitoringFlag" jdbcType="VARCHAR" />
+    <result column="equip_monitoring_flag" property="equipMonitoringFlag" jdbcType="VARCHAR" />
+    <result column="org_name" property="orgName" jdbcType="VARCHAR" />
+    <result column="org_desc" property="orgDesc" jdbcType="VARCHAR" />
+    <result column="equip_production" property="equipProduction" jdbcType="INTEGER" />
+    <result column="equip_production_hour" property="equipProductionHour" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    equip_no, equip_name, equip_type_id, proce_code, proce_name, proce_desc, use_company, 
+    use_dept, use_date, equip_importance, remarks, org_no, production_monitoring_flag, 
+    equip_monitoring_flag, org_name, org_desc, equip_production, equip_production_hour
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_equipment_info
+    where equip_no = #{equipNo,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from t_equipment_info
+    where equip_no = #{equipNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.jinfei.jfmc.model.tEquipmentInfo" >
+    insert into t_equipment_info (equip_no, equip_name, equip_type_id, 
+      proce_code, proce_name, proce_desc, 
+      use_company, use_dept, use_date, 
+      equip_importance, remarks, org_no, 
+      production_monitoring_flag, equip_monitoring_flag, 
+      org_name, org_desc, equip_production, 
+      equip_production_hour)
+    values (#{equipNo,jdbcType=VARCHAR}, #{equipName,jdbcType=VARCHAR}, #{equipTypeId,jdbcType=INTEGER}, 
+      #{proceCode,jdbcType=VARCHAR}, #{proceName,jdbcType=VARCHAR}, #{proceDesc,jdbcType=VARCHAR}, 
+      #{useCompany,jdbcType=VARCHAR}, #{useDept,jdbcType=VARCHAR}, #{useDate,jdbcType=VARCHAR}, 
+      #{equipImportance,jdbcType=VARCHAR}, #{remarks,jdbcType=VARCHAR}, #{orgNo,jdbcType=VARCHAR}, 
+      #{productionMonitoringFlag,jdbcType=VARCHAR}, #{equipMonitoringFlag,jdbcType=VARCHAR}, 
+      #{orgName,jdbcType=VARCHAR}, #{orgDesc,jdbcType=VARCHAR}, #{equipProduction,jdbcType=INTEGER}, 
+      #{equipProductionHour,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.jinfei.jfmc.model.tEquipmentInfo" >
+    insert into t_equipment_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="equipNo != null" >
+        equip_no,
+      </if>
+      <if test="equipName != null" >
+        equip_name,
+      </if>
+      <if test="equipTypeId != null" >
+        equip_type_id,
+      </if>
+      <if test="proceCode != null" >
+        proce_code,
+      </if>
+      <if test="proceName != null" >
+        proce_name,
+      </if>
+      <if test="proceDesc != null" >
+        proce_desc,
+      </if>
+      <if test="useCompany != null" >
+        use_company,
+      </if>
+      <if test="useDept != null" >
+        use_dept,
+      </if>
+      <if test="useDate != null" >
+        use_date,
+      </if>
+      <if test="equipImportance != null" >
+        equip_importance,
+      </if>
+      <if test="remarks != null" >
+        remarks,
+      </if>
+      <if test="orgNo != null" >
+        org_no,
+      </if>
+      <if test="productionMonitoringFlag != null" >
+        production_monitoring_flag,
+      </if>
+      <if test="equipMonitoringFlag != null" >
+        equip_monitoring_flag,
+      </if>
+      <if test="orgName != null" >
+        org_name,
+      </if>
+      <if test="orgDesc != null" >
+        org_desc,
+      </if>
+      <if test="equipProduction != null" >
+        equip_production,
+      </if>
+      <if test="equipProductionHour != null" >
+        equip_production_hour,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="equipNo != null" >
+        #{equipNo,jdbcType=VARCHAR},
+      </if>
+      <if test="equipName != null" >
+        #{equipName,jdbcType=VARCHAR},
+      </if>
+      <if test="equipTypeId != null" >
+        #{equipTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="proceCode != null" >
+        #{proceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="proceName != null" >
+        #{proceName,jdbcType=VARCHAR},
+      </if>
+      <if test="proceDesc != null" >
+        #{proceDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="useCompany != null" >
+        #{useCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="useDept != null" >
+        #{useDept,jdbcType=VARCHAR},
+      </if>
+      <if test="useDate != null" >
+        #{useDate,jdbcType=VARCHAR},
+      </if>
+      <if test="equipImportance != null" >
+        #{equipImportance,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="orgNo != null" >
+        #{orgNo,jdbcType=VARCHAR},
+      </if>
+      <if test="productionMonitoringFlag != null" >
+        #{productionMonitoringFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="equipMonitoringFlag != null" >
+        #{equipMonitoringFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="orgName != null" >
+        #{orgName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgDesc != null" >
+        #{orgDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="equipProduction != null" >
+        #{equipProduction,jdbcType=INTEGER},
+      </if>
+      <if test="equipProductionHour != null" >
+        #{equipProductionHour,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.jinfei.jfmc.model.tEquipmentInfo" >
+    update t_equipment_info
+    <set >
+      <if test="equipName != null" >
+        equip_name = #{equipName,jdbcType=VARCHAR},
+      </if>
+      <if test="equipTypeId != null" >
+        equip_type_id = #{equipTypeId,jdbcType=INTEGER},
+      </if>
+      <if test="proceCode != null" >
+        proce_code = #{proceCode,jdbcType=VARCHAR},
+      </if>
+      <if test="proceName != null" >
+        proce_name = #{proceName,jdbcType=VARCHAR},
+      </if>
+      <if test="proceDesc != null" >
+        proce_desc = #{proceDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="useCompany != null" >
+        use_company = #{useCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="useDept != null" >
+        use_dept = #{useDept,jdbcType=VARCHAR},
+      </if>
+      <if test="useDate != null" >
+        use_date = #{useDate,jdbcType=VARCHAR},
+      </if>
+      <if test="equipImportance != null" >
+        equip_importance = #{equipImportance,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        remarks = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="orgNo != null" >
+        org_no = #{orgNo,jdbcType=VARCHAR},
+      </if>
+      <if test="productionMonitoringFlag != null" >
+        production_monitoring_flag = #{productionMonitoringFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="equipMonitoringFlag != null" >
+        equip_monitoring_flag = #{equipMonitoringFlag,jdbcType=VARCHAR},
+      </if>
+      <if test="orgName != null" >
+        org_name = #{orgName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgDesc != null" >
+        org_desc = #{orgDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="equipProduction != null" >
+        equip_production = #{equipProduction,jdbcType=INTEGER},
+      </if>
+      <if test="equipProductionHour != null" >
+        equip_production_hour = #{equipProductionHour,jdbcType=INTEGER},
+      </if>
+    </set>
+    where equip_no = #{equipNo,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.jinfei.jfmc.model.tEquipmentInfo" >
+    update t_equipment_info
+    set equip_name = #{equipName,jdbcType=VARCHAR},
+      equip_type_id = #{equipTypeId,jdbcType=INTEGER},
+      proce_code = #{proceCode,jdbcType=VARCHAR},
+      proce_name = #{proceName,jdbcType=VARCHAR},
+      proce_desc = #{proceDesc,jdbcType=VARCHAR},
+      use_company = #{useCompany,jdbcType=VARCHAR},
+      use_dept = #{useDept,jdbcType=VARCHAR},
+      use_date = #{useDate,jdbcType=VARCHAR},
+      equip_importance = #{equipImportance,jdbcType=VARCHAR},
+      remarks = #{remarks,jdbcType=VARCHAR},
+      org_no = #{orgNo,jdbcType=VARCHAR},
+      production_monitoring_flag = #{productionMonitoringFlag,jdbcType=VARCHAR},
+      equip_monitoring_flag = #{equipMonitoringFlag,jdbcType=VARCHAR},
+      org_name = #{orgName,jdbcType=VARCHAR},
+      org_desc = #{orgDesc,jdbcType=VARCHAR},
+      equip_production = #{equipProduction,jdbcType=INTEGER},
+      equip_production_hour = #{equipProductionHour,jdbcType=INTEGER}
+    where equip_no = #{equipNo,jdbcType=VARCHAR}
+  </update>
+  <select id="getTEquipmentInfo" resultMap="BaseResultMap">
+    SELECT * FROM jfmc_new.t_equipment_info WHERE use_company LIKE "今泰4期（主机）" AND equip_name LIKE "低压铸造%" ORDER BY equip_name
+  </select>
+</mapper>

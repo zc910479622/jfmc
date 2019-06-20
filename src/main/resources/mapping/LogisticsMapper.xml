@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jinfei.jfmc.dao.LogisticsMapper" >
+  <resultMap id="BaseResultMap" type="com.jinfei.jfmc.model.Logistics" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="car_plate" property="carPlate" jdbcType="VARCHAR" />
+    <result column="car_plate_type" property="carPlateType" jdbcType="INTEGER" />
+    <result column="driver_name" property="driverName" jdbcType="VARCHAR" />
+    <result column="driver_phone" property="driverPhone" jdbcType="VARCHAR" />
+    <result column="point_start" property="pointStart" jdbcType="VARCHAR" />
+    <result column="vehicle_cargo_no" property="vehicleCargoNo" jdbcType="VARCHAR" />
+    <result column="car_goods" property="carGoods" jdbcType="LONGVARBINARY" />
+    <result column="equip_no" property="equipNo" jdbcType="VARCHAR" />
+    <result column="beidouLongitude_baidu" property="beidoulongitudeBaidu" jdbcType="DOUBLE" />
+    <result column="beidouLatitude_baidu" property="beidoulatitudeBaidu" jdbcType="DOUBLE" />
+    <result column="equip_speed" property="equipSpeed" jdbcType="DOUBLE" />
+    <result column="equip_state" property="equipState" jdbcType="BIT" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <!--<resultMap id="ResultMapWithBLOBs" type="com.jinfei.model.Logistics" extends="BaseResultMap" >-->
+    <!--<result column="jsondata" property="jsondata" jdbcType="LONGVARBINARY" />-->
+  <!--</resultMap>-->
+  <sql id="Base_Column_List" >
+    id, car_plate, car_plate_type, driver_name, driver_phone, point_start,vehicle_cargo_no, car_goods, equip_no, beidouLongitude_baidu, beidouLatitude_baidu,
+    equip_speed, equip_state, update_time
+  </sql>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from t_car_info
+    where select_state=0
+  </select>
+</mapper>

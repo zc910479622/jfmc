@@ -1,0 +1,70 @@
+body {
+    background: url(../images/index1_bg.jpg) left top no-repeat;
+    color: #4788fb;
+    overflow: hidden;
+}
+
+#divTitle {
+    position: absolute;
+    left: 276px;
+    top: 38px;
+    font-size: 3.5em;
+    font-weight: bold;
+    font-family: Arial, 宋体, sans-serif
+}
+
+
+table,tbody,tfoot,thead,tr,th,td {
+    margin:0;
+    padding:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    border-collapse:collapse;
+    border-spacing:0;
+    border:0px;
+}
+.tablebox {
+    height:400px;
+    overflow:hidden;
+    margin:50px auto;
+}
+.tablebox table {
+    width:100%;
+}
+.tablebox table th,.tablebox table td {
+    font-size:24px;
+    text-align:center;
+    line-height:60px;
+    margin: auto 2%;
+}
+.tablebox table th {
+    color:#FFF;
+    background-color:#4788fb;
+}
+.tablebox table td img {
+    display:inline-block;
+    vertical-align:middle;
+}
+.tablebox table tbody tr:nth-child(even) {
+    background-color:rgba(255,255,255,0.1);
+}
+.tablebox.table_md table td,.tablebox.table_md table th {
+    line-height:40px;
+}
+
+.ronglian {
+    width: 95%;
+    height: 80%;
+    text-align: center;
+    margin: 6.5% auto;
+}
+
+#tableId{
+    table-layout:fixed;
+}
+
+#tableId tbody td{
+    white-space:nowrap
+}

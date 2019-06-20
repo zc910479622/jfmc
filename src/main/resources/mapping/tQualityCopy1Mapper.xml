@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jinfei.jfmc.dao.tQualityCopy1Mapper" >
+  <resultMap id="BaseResultMap" type="com.jinfei.jfmc.model.tQualityCopy1" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="casting_num" property="castingNum" jdbcType="INTEGER" />
+    <result column="casting_bad" property="castingBad" jdbcType="INTEGER" />
+    <result column="comprehensive_num" property="comprehensiveNum" jdbcType="INTEGER" />
+    <result column="comprehensive_bad" property="comprehensiveBad" jdbcType="INTEGER" />
+    <result column="machining_num" property="machiningNum" jdbcType="INTEGER" />
+    <result column="machining_bad" property="machiningBad" jdbcType="INTEGER" />
+    <result column="coating_num" property="coatingNum" jdbcType="INTEGER" />
+    <result column="coating_bad" property="coatingBad" jdbcType="INTEGER" />
+    <result column="deposit_date" property="depositDate" jdbcType="INTEGER" />
+    <result column="factoryId" property="factoryid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, casting_num, casting_bad, comprehensive_num, comprehensive_bad, machining_num, 
+    machining_bad, coating_num, coating_bad, deposit_date, factoryId
+  </sql>
+  <select id="getQualityData" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>
+    FROM
+    t_quality_copy1
+    WHERE factoryId = #{factoryId,jdbcType=INTEGER}
+    ORDER BY id DESC
+  </select>
+</mapper>

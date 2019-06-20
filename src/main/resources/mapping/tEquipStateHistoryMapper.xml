@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jinfei.jfmc.dao.tEquipStateHistoryMapper">
+    <resultMap id="BaseResultMap" type="com.jinfei.jfmc.model.tEquipStateHistory">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="equip_name" property="equipName" jdbcType="VARCHAR"/>
+        <result column="equip_code" property="equipCode" jdbcType="VARCHAR"/>
+        <result column="start_time" property="startTime" jdbcType="TIMESTAMP"/>
+        <result column="end_time" property="endTime" jdbcType="TIMESTAMP"/>
+        <result column="equip_state" property="equipState" jdbcType="INTEGER"/>
+        <result column="proce_code" property="proceCode" jdbcType="VARCHAR"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, equip_name, equip_code, start_time, end_time, equip_state, proce_code, update_time
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from t_equip_state_history
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from t_equip_state_history
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+    <insert id="insert" parameterType="com.jinfei.jfmc.model.tEquipStateHistory">
+    insert into t_equip_state_history (id, equip_name, equip_code, 
+      start_time, end_time, equip_state, 
+      proce_code, update_time)
+    values (#{id,jdbcType=BIGINT}, #{equipName,jdbcType=VARCHAR}, #{equipCode,jdbcType=VARCHAR}, 
+      #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{equipState,jdbcType=INTEGER}, 
+      #{proceCode,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+    <insert id="insertSelective" parameterType="com.jinfei.jfmc.model.tEquipStateHistory">
+        insert into t_equip_state_history
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="equipName != null">
+                equip_name,
+            </if>
+            <if test="equipCode != null">
+                equip_code,
+            </if>
+            <if test="startTime != null">
+                start_time,
+            </if>
+            <if test="endTime != null">
+                end_time,
+            </if>
+            <if test="equipState != null">
+                equip_state,
+            </if>
+            <if test="proceCode != null">
+                proce_code,
+            </if>
+            <if test="updateTime != null">
+                update_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="equipName != null">
+                #{equipName,jdbcType=VARCHAR},
+            </if>
+            <if test="equipCode != null">
+                #{equipCode,jdbcType=VARCHAR},
+            </if>
+            <if test="startTime != null">
+                #{startTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="endTime != null">
+                #{endTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="equipState != null">
+                #{equipState,jdbcType=INTEGER},
+            </if>
+            <if test="proceCode != null">
+                #{proceCode,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.jinfei.jfmc.model.tEquipStateHistory">
+        update t_equip_state_history
+        <set>
+            <if test="equipName != null">
+                equip_name = #{equipName,jdbcType=VARCHAR},
+            </if>
+            <if test="equipCode != null">
+                equip_code = #{equipCode,jdbcType=VARCHAR},
+            </if>
+            <if test="startTime != null">
+                start_time = #{startTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="endTime != null">
+                end_time = #{endTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="equipState != null">
+                equip_state = #{equipState,jdbcType=INTEGER},
+            </if>
+            <if test="proceCode != null">
+                proce_code = #{proceCode,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                update_time = #{updateTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.jinfei.jfmc.model.tEquipStateHistory">
+    update t_equip_state_history
+    set equip_name = #{equipName,jdbcType=VARCHAR},
+      equip_code = #{equipCode,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      end_time = #{endTime,jdbcType=TIMESTAMP},
+      equip_state = #{equipState,jdbcType=INTEGER},
+      proce_code = #{proceCode,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+    <select id="getEquipStateList" resultMap="BaseResultMap">
+    SELECT
+        *
+    FROM
+        jfmc_new.t_equip_state_history
+    WHERE
+        end_time BETWEEN DATE_FORMAT( NOW( ), "%Y-%m-%d 08:00:00" )
+    AND
+        DATE_FORMAT(DATE_ADD(NOW(),INTERVAL 1 DAY),"%Y-%m-%d 08:00:00")
+    OR
+        end_time is null
+        order by start_time
+  </select>
+</mapper>

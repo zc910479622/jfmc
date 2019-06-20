@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jinfei.jfmc.dao.tWorkshopZzMapper" >
+  <resultMap id="BaseResultMap" type="com.jinfei.jfmc.model.tWorkshopZz" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="equip_no" property="equipNo" jdbcType="VARCHAR" />
+    <result column="equip_name" property="equipName" jdbcType="VARCHAR" />
+    <result column="production" property="production" jdbcType="INTEGER" />
+    <result column="bad_wg" property="badWg" jdbcType="INTEGER" />
+    <result column="good_production" property="goodProduction" jdbcType="INTEGER" />
+    <result column="equip_state" property="equipState" jdbcType="BIT" />
+    <result column="happen_time" property="happenTime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, equip_no, equip_name, production, bad_wg, good_production, equip_state, happen_time
+  </sql>
+  <select id="getRealtimeData" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from t_workshop_zz
+    order by equip_name
+  </select>
+  <select id="getRealtimeData1" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from t_workshop_zz_copy1
+    order by equip_name
+  </select>
+</mapper>

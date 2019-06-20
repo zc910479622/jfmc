@@ -1,0 +1,103 @@
+.container-flex {
+    background: url(../images/index1_bg.jpg) left top no-repeat;
+	color: #4788fb;
+}
+
+#divTitle{
+	position: absolute;
+	left: 276px;
+	top: 38px;
+	font-size: 2.5em;
+	font-weight:bold;
+	font-family: Arial, 宋体, sans-serif
+}
+
+#divTianQi{
+	position: absolute;
+	left: 70px;
+	top: 128px;
+}
+
+#divNow{
+	font-size: 1.6em ;
+	line-height: 100%;
+	float:left;
+	padding-top:3px;
+}
+
+#divTianQiIMG{
+	width: 76px;
+	float: left;
+}
+
+#divTianQiIMG img{
+	width: 60px;
+	height: 50px;
+}
+
+#divTianQi .message{
+	float: left;
+	font-size: 1.0em;
+	border-left: 2px solid #4788fb;
+	margin-right: 10px;
+	padding-left: 10px;
+}
+
+#divSelect{
+	position: absolute;
+	top: 64px;
+    left: 760px;
+	float:left;
+}
+
+#divSelect select{
+	float: left;
+	color: #4788fb;
+	font-size: 1.2em;
+	width: 200px;
+	border: 1px solid #4788fb;
+	background-color:transparent;
+	margin-right: 20px;
+}
+
+#divArea1 ,#divArea2 ,#divArea3 ,#divArea4 ,#divArea5{
+	position: absolute;
+    box-sizing: border-box;
+    border: 1px solid #2C58A6;
+    border-radius: 2px;
+}
+
+#divArea1{
+	top: 210px;
+    left: 70px;
+	width: 490px;
+    height: 390px;
+}
+
+#divArea2{
+	top: 640px;
+    left: 70px;
+	width: 490px;
+    height: 390px;
+}
+
+#divArea3{
+	top: 128px;
+    left: 600px;
+	width: 760px;
+    height: 902px;
+}
+
+#divArea4{
+	top: 128px;
+    left: 1400px;
+	width: 490px;
+    height: 472px;
+}
+
+#divArea5{
+	top: 640px;
+    left: 1400px;
+	width: 490px;
+    height: 390px;
+}

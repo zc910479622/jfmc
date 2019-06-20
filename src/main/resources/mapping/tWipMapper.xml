@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jinfei.jfmc.dao.tWipMapper" >
+  <resultMap id="BaseResultMap" type="com.jinfei.jfmc.model.tWip" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="factory" property="factory" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.jinfei.jfmc.model.tWip" extends="BaseResultMap" >
+    <result column="jsondata" property="jsondata" jdbcType="LONGVARBINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, factory
+  </sql>
+  <sql id="Blob_Column_List" >
+    jsondata
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_wip
+    where factory = "kd3"
+    order by id desc limit 1
+  </select>
+  <select id="selectByPrimaryKey1" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_wip_copy1
+    where factory = "mr1"
+    order by id desc limit 1
+  </select>
+</mapper>

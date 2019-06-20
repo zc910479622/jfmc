@@ -1,0 +1,15 @@
+body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+
+#title{
+    position: absolute;
+    margin: 10px 0 0 2%;
+    padding: 1% 2.5% 1% 2.5%;
+    float: left;
+    color: #FFF;
+    font-size: 28px;
+    font-weight:bold;
+    border: 2px solid #bfefff;
+    text-align: center;
+    background-color: #002040;
+    z-index: 1000;
+}

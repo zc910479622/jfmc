@@ -1,0 +1,46 @@
+.container-flex {
+    background: url(../images/index2_bg.jpg) left top no-repeat;
+	color: #4788fb;
+}
+
+#divArea1 ,#divArea2 ,#divArea3 ,#divArea4 ,#divArea5{
+	position: absolute;
+    box-sizing: border-box;
+    border: 1px solid #2C58A6;
+    border-radius: 2px;
+}
+
+#divArea1{
+	top: 50px;
+    left: 20px;
+	width: 490px;
+    height: 470px;
+}
+
+#divArea2{
+	top: 560px;
+    left: 20px;
+	width: 490px;
+    height: 470px;
+}
+
+#divArea3{
+	top: 50px;
+    left: 550px;
+	width: 760px;
+    height: 980px;
+}
+
+#divArea4{
+	top: 50px;
+    left: 1350px;
+	width: 490px;
+    height: 470px;
+}
+
+#divArea5{
+	top: 560px;
+    left: 1350px;
+	width: 490px;
+    height: 450px;
+}

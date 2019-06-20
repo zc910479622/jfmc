@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jinfei.jfmc.dao.tScPlanMapper" >
+  <resultMap id="BaseResultMap" type="com.jinfei.jfmc.model.tScPlan" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="date" property="date" jdbcType="TIMESTAMP" />
+    <result column="planProduction" property="planproduction" jdbcType="INTEGER" />
+    <result column="realProduction" property="realproduction" jdbcType="INTEGER" />
+    <result column="sc_plan_json" property="scPlanJson" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.jinfei.jfmc.model.tScPlan" extends="BaseResultMap" >
+    <result column="sc_plan_json" property="scPlanJson" jdbcType="LONGVARBINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, date, planProduction, realProduction
+  </sql>
+  <sql id="Blob_Column_List" >
+    sc_plan_json
+  </sql>
+  <select id="getPlaninfoData" resultMap="BaseResultMap">
+  SELECT
+    <include refid="Base_Column_List"/>,
+    <include refid="Blob_Column_List"/>
+  FROM
+  t_sc_plan
+  WHERE
+  DATE_SUB(CURDATE(),INTERVAL 9 DAY) &lt;= DATE(t_sc_plan.date)
+</select>
+  <select id="getPlaninfoData1" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List"/>,
+    <include refid="Blob_Column_List"/>
+    FROM
+    t_sc_plan_copy1
+    WHERE
+    DATE_SUB(CURDATE(),INTERVAL 9 DAY) &lt;= DATE(t_sc_plan_copy1.date)
+  </select>
+</mapper>

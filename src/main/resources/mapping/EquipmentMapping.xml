@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jinfei.jfmc.dao.EquipmentMapper" >
+    <resultMap id="BaseResultMap" type="com.jinfei.jfmc.model.Equipment" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <result column="total" property="total" jdbcType="INTEGER" />
+        <result column="fault" property="fault" jdbcType="INTEGER" />
+        <result column="lackMaterial" property="lackMaterial" jdbcType="INTEGER" />
+        <result column="unscheduling" property="unscheduling" jdbcType="INTEGER" />
+        <result column="shorthanded" property="shorthanded" jdbcType="INTEGER" />
+        <result column="timeout" property="timeout" jdbcType="INTEGER" />
+        <result column="factoryId" property="factoryId" jdbcType="INTEGER" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        total,fault,lackMaterial,unscheduling,shorthanded,timeout
+    </sql>
+    <select id="getEquipmentData" resultMap="BaseResultMap">
+        SELECT
+          <include refid="Base_Column_List"/>
+        FROM
+          equipment
+        WHERE
+        factoryId = #{factoryId,jdbcType=INTEGER}
+        ORDER BY
+        id desc LIMIT 1
+    </select>
+</mapper>

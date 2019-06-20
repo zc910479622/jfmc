@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jinfei.jfmc.dao.RealtimeCastingMapper" >
+    <resultMap id="BaseResultMap" type="com.jinfei.jfmc.model.RealtimeCasting" >
+        <id column="recordId" property="recordId" jdbcType="INTEGER" />
+        <result column="equipName" property="equipName" jdbcType="VARCHAR" />
+        <result column="yield" property="yield" jdbcType="INTEGER" />
+        <result column="turnDown" property="turnDown" jdbcType="INTEGER" />
+        <result column="operatioState" property="operatioState" jdbcType="INTEGER" />
+        <result column="factoryId" property="factoryId" jdbcType="INTEGER" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        equipName,yield,turnDown,operatioState
+    </sql>
+    <select id="getRealtimeData" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+       SELECT
+	    realtime_casting.*
+      FROM
+	    realtime_casting
+	  RIGHT JOIN
+	  ( SELECT max( recordId ) ID FROM realtime_casting WHERE factoryId = #{factoryId,jdbcType=INTEGER} GROUP BY equipName ) a ON realtime_casting.recordId = a.ID
+    </select>
+</mapper>

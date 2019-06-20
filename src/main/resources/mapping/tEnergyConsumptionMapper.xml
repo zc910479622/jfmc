@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jinfei.jfmc.dao.tEnergyConsumptionMapper" >
+  <resultMap id="BaseResultMap" type="com.jinfei.jfmc.model.tEnergyConsumption" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="factory_name" property="factoryName" jdbcType="VARCHAR" />
+    <result column="workshop_name" property="workshopName" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="TINYINT" />
+    <result column="end_time" property="endTime" jdbcType="TIMESTAMP" />
+    <result column="value" property="value" jdbcType="DOUBLE" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, factory_name, workshop_name, type, end_time, value
+  </sql>
+  <select id="getEnergyData" resultMap="BaseResultMap">
+        select
+        factory_name,workshop_name,end_time,value,type
+        from t_energy_consumption
+        where
+        DATE_SUB(CURDATE(),INTERVAL 14 DAY) &lt;= DATE(end_time)
+        AND factory_name = "凯达三工厂"
+        AND workshop_name != "机械厂"
+    </select>
+</mapper>

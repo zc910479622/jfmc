@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jinfei.jfmc.dao.tOrderInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.jinfei.jfmc.model.tOrderInfo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="order_production_plan" property="orderProductionPlan" jdbcType="INTEGER" />
+    <result column="order_production_finish" property="orderProductionFinish" jdbcType="INTEGER" />
+    <result column="order_info_json" property="orderInfoJson" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.jinfei.jfmc.model.tOrderInfo" extends="BaseResultMap" >
+    <result column="order_info_json" property="orderInfoJson" jdbcType="LONGVARBINARY" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, order_production_plan, order_production_finish
+  </sql>
+  <sql id="Blob_Column_List" >
+    order_info_json
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List"/>,
+    <include refid="Blob_Column_List"/>
+    from t_order_info
+    ORDER BY
+    id desc LIMIT 1
+  </select>
+  <select id="selectByPrimaryKey1" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List"/>,
+    <include refid="Blob_Column_List"/>
+    from t_order_info_copy1
+    ORDER BY
+    id desc LIMIT 1
+  </select>
+</mapper>

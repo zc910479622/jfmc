@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jinfei.jfmc.dao.PeopleManageMapper" >
+  <resultMap id="BaseResultMap" type="com.jinfei.jfmc.model.PeopleManage" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="workDate" property="workdate" jdbcType="INTEGER" />
+    <result column="peopleNum" property="peoplenum" jdbcType="INTEGER" />
+    <result column="shidao" property="shidao" jdbcType="INTEGER" />
+    <result column="rotatType" property="rotattype" jdbcType="TINYINT" />
+    <result column="locale" property="locale" jdbcType="VARCHAR" />
+    <result column="factoryId" property="factoryId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, workDate, peopleNum, shidao, rotatType, locale
+  </sql>
+  <select id="getPeopleManageData" resultMap="BaseResultMap">
+    SELECT * FROM
+    peoplemanage
+    WHERE factoryId = #{factoryId,jdbcType=INTEGER}
+
+  </select>
+  <select id="getPeopleManageList" resultMap="BaseResultMap">
+    SELECT * FROM
+    peoplemanage
+    WHERE factoryId = #{factoryId,jdbcType=INTEGER}
+    ORDER BY workDate DESC
+  </select>
+</mapper>

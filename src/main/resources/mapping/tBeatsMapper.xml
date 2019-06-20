@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jinfei.jfmc.dao.tBeatsMapper">
+    <resultMap id="BaseResultMap" type="com.jinfei.jfmc.model.tBeats">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="equipNO" property="equipno" jdbcType="VARCHAR"/>
+        <result column="equipName" property="equipname" jdbcType="VARCHAR"/>
+        <result column="mechanicalBeats" property="mechanicalbeats" jdbcType="INTEGER"/>
+        <result column="personBeats" property="personbeats" jdbcType="INTEGER"/>
+        <result column="count" property="count" jdbcType="INTEGER"/>
+        <result column="mechanical" property="mechanical" javaType="INTEGER"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, equipNO, equipName, mechanicalBeats, personBeats
+  </sql>
+    <select id="getSelect" resultMap="BaseResultMap">
+    SELECT equipName
+    FROM t_beats
+    GROUP BY equipName
+    ORDER BY equipName
+  </select>
+    <select id="gettBeatsList" resultMap="BaseResultMap">
+    SELECT *
+    FROM t_beats
+    WHERE equipName = #{equipname,jdbcType=VARCHAR}
+    ORDER BY id desc LIMIT 20
+  </select>
+    <select id="gettBeatsCount" resultMap="BaseResultMap">
+    SELECT equipName,equipNO,COUNT(equipNO) as count FROM `t_beats` WHERE up_time BETWEEN DATE_FORMAT(NOW(),'%Y-%m-%d 08:00:00') AND DATE_FORMAT(DATE_ADD(NOW(),INTERVAL 1 DAY),'%Y-%m-%d 08:00:00') GROUP BY equipNO
+  </select>
+    <select id="getMechanicalBeatsCount" resultMap="BaseResultMap">
+        SELECT equipName,equipNO,COUNT(mechanicalBeats) as mechanical FROM `t_beats` WHERE mechanicalBeats &lt;= 120 and
+        up_time BETWEEN DATE_FORMAT(NOW(),'%Y-%m-%d 08:00:00') AND DATE_FORMAT(DATE_ADD(NOW(),INTERVAL 1 DAY),'%Y-%m-%d
+        08:00:00') GROUP BY equipNO
+    </select>
+</mapper>

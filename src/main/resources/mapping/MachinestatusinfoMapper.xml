@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jinfei.jfmc.dao.MachinestatusinfoMapper" >
+  <resultMap id="BaseResultMap" type="com.jinfei.jfmc.model.Machinestatusinfo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="equip_no" property="equipNo" jdbcType="VARCHAR" />
+    <result column="equip_name" property="equipName" jdbcType="VARCHAR" />
+    <result column="proce_code" property="proceCode" jdbcType="VARCHAR" />
+    <result column="use_company" property="useCompany" jdbcType="VARCHAR" />
+    <result column="use_dept" property="useDept" jdbcType="VARCHAR" />
+    <result column="use_date" property="useDate" jdbcType="VARCHAR" />
+    <result column="made_fact" property="madeFact" jdbcType="VARCHAR" />
+    <result column="fact_no" property="factNo" jdbcType="VARCHAR" />
+    <result column="enable_flag" property="enableFlag" jdbcType="BIT" />
+    <result column="error_type" property="errorType" jdbcType="INTEGER" />
+    <result column="factoryId" property="factoryId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, equip_no, equip_name, proce_code, use_company, use_dept, use_date, made_fact, 
+    fact_no, enable_flag, error_type,factoryId
+  </sql>
+  <select id="queryMacList" parameterType="com.jinfei.jfmc.model.Machinestatusinfo" resultMap="BaseResultMap">
+    select <include refid="Base_Column_List" /> from machinestatusinfo
+    <where>
+      <if test="factoryId != null and factoryId != ''">
+        factoryId=#{factoryId}
+      </if>
+    </where>
+  </select>
+  <select id="getMacinestatusinfo" resultMap="BaseResultMap">
+    SELECT * FROM `machinestatusinfo` WHERE use_company LIKE "今泰4期（主机）" AND equip_name LIKE "低压铸造%"
+  </select>
+</mapper>

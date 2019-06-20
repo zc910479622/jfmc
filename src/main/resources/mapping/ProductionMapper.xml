@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jinfei.jfmc.dao.ProductionMapper" >
+  <resultMap id="BaseResultMap" type="com.jinfei.jfmc.model.Production" >
+    <id column="day_plan_id" property="dayPlanId" jdbcType="INTEGER" />
+    <result column="day" property="day" jdbcType="TIMESTAMP" />
+    <result column="plan_order_num" property="planOrderNum" jdbcType="VARCHAR" />
+    <result column="product_model" property="productModel" jdbcType="VARCHAR" />
+    <result column="target" property="target" jdbcType="INTEGER" />
+    <result column="morning_production" property="morningProduction" jdbcType="INTEGER" />
+    <result column="afternoon_production" property="afternoonProduction" jdbcType="INTEGER" />
+    <result column="evening_production" property="eveningProduction" jdbcType="INTEGER" />
+    <result column="factoryId" property="factoryid" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    day_plan_id, day, plan_order_num, product_model, target, morning_production, afternoon_production,
+    evening_production, factoryId
+  </sql>
+  <select id="getProductionList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from
+    production
+    WHERE
+    factoryId = #{factoryid,jdbcType=INTEGER}
+    AND
+    DATE_SUB(CURDATE(),INTERVAL 9 DAY) &lt;= DATE(day)
+  </select>
+</mapper>

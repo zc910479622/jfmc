@@ -1,0 +1,662 @@
+﻿body {
+    background: url(../images/index1_bg.jpg) left top no-repeat;
+    color: #4788fb;
+    overflow: hidden;
+}
+
+#divTitle {
+    position: absolute;
+    left: 276px;
+    top: 38px;
+    font-size: 2.5em;
+    font-weight: bold;
+    font-family: Arial, 宋体, sans-serif
+}
+
+.subTitle {
+    margin-left: 32px;
+    margin-top: 16px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial, 宋体, sans-serif;
+    padding-bottom: 5px;
+}
+
+.subTitle span {
+    color: #ffe599;
+}
+
+#divTianQi {
+    position: absolute;
+    left: 80px;
+    top: 120px;
+    color: #FFF;
+    font-family: Arial, 宋体, sans-serif
+}
+
+#divNow {
+    font-size: 1.6em;
+    line-height: 100%;
+    float: left;
+    padding-top: 3px;
+    line-height: 28px;
+}
+
+#divTianQiIMG {
+    width: 120px;
+    float: left;
+    margin: 0px 5px;
+    text-align: center;
+}
+
+#divTianQiIMG img {
+    height: 50px;
+}
+
+#divTianQi .message {
+    float: left;
+    font-size: 1.0em;
+    border-left: 2px solid #4788fb;
+    margin-right: 16px;
+    padding-left: 16px;
+}
+
+#divMenu {
+    position: absolute;
+    top: 65px;
+    left: 725px;
+    width: 50%;
+    float: left;
+}
+
+#divSelect select {
+    float: left;
+    color: #4788fb;
+    font-size: 1.2em;
+    width: 200px;
+    border: 1px solid #4788fb;
+    background-color: transparent;
+    margin-right: 20px;
+}
+
+#divArea1,
+#divArea2,
+#divArea3,
+#divArea4,
+#divArea5,
+#divArea6,
+#divArea7{
+    position: absolute;
+    box-sizing: border-box;
+    border: 1px solid #2C58A6;
+}
+
+#divArea1 {
+    top: 210px;
+    left: 70px;
+    width: 490px;
+    height: 390px;
+}
+
+#divArea2 {
+    top: 640px;
+    left: 70px;
+    width: 490px;
+    height: 390px;
+}
+
+#divArea3 {
+    top: 108px;
+    left: 600px;
+    width: 760px;
+    height: 300px;
+}
+
+#divArea4 {
+    top: 108px;
+    left: 1400px;
+    width: 490px;
+    height: 492px;
+}
+
+#divArea5 {
+    top: 640px;
+    left: 1400px;
+    width: 490px;
+    height: 390px;
+}
+
+#divArea6 {
+    top: 765px;
+    left: 600px;
+    width: 760px;
+    height: 265px;
+}
+
+#divArea7 {
+    top: 448px;
+    left: 600px;
+    width: 760px;
+    height: 278px;
+}
+
+#chart31 {
+    position: relative;
+    padding: 0px 16px;
+}
+
+#chart32 {
+    position: relative;
+    height: 100% !important;
+}
+
+#chart41,
+#chart42 {
+    position: relative;
+    height: 50%;
+    width: 50%;
+    float: left;
+    z-index: 2;
+}
+
+#chart43 {
+    position: relative;
+    height: 52%;
+    top: -2%;
+}
+
+#chart51 {
+    position: relative;
+    height: 50% !important;
+    padding: 22px 16px 0px 16px;
+}
+
+#chart51 div {
+    border-radius: 5px;
+    background-color: #efefef;
+    padding: 2px;
+}
+
+#chart51 table {
+    width: 100%;
+    font-family: Arial, 微软雅黑, sans-serif;
+    font-size: 14px;
+}
+
+#chart51 table thead th {
+    color: #efefef;
+    width: 18%;
+}
+
+#chart51 table #thDate {
+    color: #ffe599;
+    font-size: 18px;
+    width: 28%;
+}
+
+#chart51 table tbody td {
+    font-size: 12px;
+}
+
+#chart51 th,
+#chart51 td {
+    padding: 4px 0px;
+    text-align: center !important;
+}
+
+#chart51 #trBan0 {
+    color: #1a98f8;
+}
+
+#chart51 #trBan1 {
+    color: #96d668;
+}
+
+#chart51 #trBan2 {
+    color: #ffff73;
+}
+
+#chart51 .line {
+    padding: 0px 0px 0px 30px !important;
+    color: #efefef;
+}
+
+#chart51 tfoot {
+    color: #e63a47;
+}
+
+#chart52 {
+    position: relative;
+    height: 51% !important;
+}
+
+#chart6 {
+    position: relative;
+    height: 100% !important;
+}
+
+#num71,
+#num72{
+    float: left;
+    width: 50% !important;
+    height: 40% !important;
+    margin-top: 3% !important;
+}
+
+#num73,
+#num74,
+#num75,
+#num76{
+    float: left;
+    margin-top: 60px;
+    width: 25% !important;
+    height: 30% !important;
+}
+/*
+#num73,
+#num75{
+    padding-left: 48px;
+}
+
+#num74,
+#num76{
+    padding-left: 48px;
+}*/
+
+@charset "utf-8";
+* {
+    list-style: none
+}
+
+a, img {
+    border: 0;
+    text-decoration: none
+}
+
+.scroll {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.scroll:hover .og_next {
+    display: block;
+}
+
+.scroll:hover .og_prev {
+    display: block;
+}
+
+.picbox {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.picbox .piclist {
+    width: 100%;
+    height: 100%;
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+}
+
+.picbox .active {
+    display: block;
+}
+
+.swaplist {
+    position: absolute;
+    top: 0
+}
+
+.og_prev,
+.og_next {
+    width: 30px;
+    height: 60px;
+    background: url(../images/btn.png) no-repeat;
+    position: absolute;
+    top: 110px;
+    z-index: 99;
+    cursor: pointer;
+    display: none;
+}
+
+.og_prev {
+    background-position: 0 0;
+    left: 0
+}
+
+.og_prev:hover {
+    background-position: 0 -60px
+}
+
+.og_next {
+    background-position: -30px 0;
+    right: 0
+}
+
+.og_next:hover {
+    background-position: -30px -60px
+}
+
+.goodlist {
+    width: 25%;
+    float: left;
+    height: 100%;
+}
+
+.goodlist .pics {
+    border-radius: 20px;
+    overflow: hidden;
+    display: block;
+    width: 80%;
+    height: 80px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.goodlist .ss {
+    width: 140px;
+    height: 163px;
+    margin: 20px auto;
+    z-index: 888;
+}
+
+.goodlist .state0 {
+    background-color: #008c00;
+}
+
+.goodlist .state1 {
+    background-color: #ffa800;
+}
+
+.goodlist div p {
+    font-weight: bold;
+    color: #FFF;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.model {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    position: relative;
+}
+
+.model .Middle {
+    background-color: #0c1a2c;
+    border: 1px solid #2c58a6;
+    position: absolute;
+    width: 70%;
+    height: 80%;
+    margin: 5% 15% 10% 15%;
+}
+
+.model .Middle .headUl {
+    width: 100%;
+    height: 40px;
+}
+
+.headUl .title {
+    width: 100%;
+    height: 100%;
+    padding-left: 0;
+    border-bottom: 1px solid #2c58a6;
+}
+
+.model .headUl .title li {
+    width: 12.5%;
+    height: 40px;
+    float: left;
+    text-align: center;
+    border-left: 1px solid #2c58a6;
+}
+
+#navhead1 {
+    border-left: none;
+}
+
+.title .active {
+    background: #2c58a6;
+}
+
+.title li a {
+    font-family: "微软雅黑";
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.title .active a {
+    color: #FFF;
+    font-family: "微软雅黑";
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.close {
+    position: relative;
+    width: 65px;
+    height: 65px;
+    left: -190px;
+    background-image: url(../images/close.png);
+    background-size: contain
+}
+
+.Middle .dbody {
+    width: 95%;
+    height: calc(95% - 25px);
+    margin: calc(5% - 25px) 2.5% 0 2.5%;
+}
+
+.dbody .detailed {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#detailed5 {
+    position: relative;
+}
+
+#detailed51 {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.bootstrap-select {
+    position: absolute;
+    right: 10px;
+}
+
+.fixed-table-body tr {
+    height: 50px;
+    max-height: 50px;
+}
+
+
+
+/**************************数字滚动css**************************/
+
+
+
+a, img, input, textarea {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: ".";
+    clear: both;
+    height: 0;
+}
+
+* html .clearfix {
+    zoom: 1;
+}
+
+*:first-child + html .clearfix {
+    zoom: 1;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.none {
+    display: none;
+}
+
+.inrow {
+    font-size: 0;
+[;
+    font-size: 12px;
+];
+    *font-size: 0;
+    font-family: arial;
+[;
+    letter-spacing: -3px;
+];
+    *letter-spacing: normal;
+    *word-spacing: -1px;
+}
+
+.inrow > li, .inrow span {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    font-size: 14px;
+    letter-spacing: normal;
+    word-spacing: normal;
+}
+
+#num71 .dataNums,#num72 .dataNums{
+    margin-top: 50px;
+}
+
+#num73 .dataNums,#num74 .dataNums,#num75 .dataNums,#num76 .dataNums{
+    margin-top: 10px;
+}
+
+.dataNums {
+    display: block;
+    width: 100%;
+    height: 75px;
+    text-align: center;
+    padding:0
+}
+
+
+.dataNums .dataOne{
+    width: 48px;
+    height: 58px;
+    margin: 0px 2px;
+    text-align: center;
+    background: url(../images/num-bg1.png) no-repeat;
+    background-size:cover;
+}
+
+#num72 .dataNums .dataOne{
+    background: url(../images/num-bg.png) no-repeat;
+    background-size:cover;
+}
+
+#num73 .dataNums .dataOne, #num74 .dataNums .dataOne, #num75 .dataNums .dataOne, #num76 .dataNums .dataOne{
+    width: 25px;
+    height: 35px;
+}
+
+#divArea7 p {
+    position: absolute;
+    text-align: center;
+}
+
+.name71,.name72{
+    font-size: 28px;
+}
+
+.name73,.name74,.name75,.name76{
+    font-size: 22px;
+}
+
+.name71{
+    top: 20px;
+    left: 122px;
+}
+
+.name72{
+    top: 20px;
+    left: 512px;
+    color: #bc9b15;
+}
+
+.name73{
+    top: 165px;
+    left: 51px;
+}
+
+.name74{
+    top: 165px;
+    left: 240px;
+}
+
+.name75{
+    top: 165px;
+    left: 430px;
+}
+
+.name76{
+    top: 165px;
+    left: 620px;
+}
+
+.dataNums .dataBoc {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.dataNums .dataBoc .tt {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.dataNums .tt span {
+    width: 100%;
+    height: 100%;
+    font: bold 48px/58px "Arial";
+    color: #ddf0ff;
+}
+
+#num73 .dataNums .tt span, #num74 .dataNums .tt span, #num75 .dataNums .tt span, #num76 .dataNums .tt span{
+    font: bold 25px/35px "Arial";
+}

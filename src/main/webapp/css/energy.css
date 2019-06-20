@@ -1,0 +1,119 @@
+.container-flex {
+	background: url(../images/bg.jpg) left top no-repeat;
+	width: 100%;
+	height: 100%;
+    background-size: 100% 100%;
+}
+
+.chart-box .all-box {
+	width: 100%;
+	height: 90%;
+	margin-top: 5%;
+}
+
+.all-box .echart-box{
+	width: 100%;
+	height: 100%;
+}
+
+#all-type{
+	top: 15px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 50%;
+	height: 47.5%;
+	float: left;
+}
+
+#all-pc{
+	width: 50%;
+	height: 47.5%;
+	float: left;
+}
+
+#factory-type {
+	width: 100%;
+	height: 47.5%;
+	float: left;
+}
+
+ul,li {
+	padding: 0;
+	margin: 0;
+	list-style: none
+}
+
+#menu {
+	float: right;
+	width: 20%;
+	background: #5bc0de;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, .2);
+	margin: 20px 60px 0 0;
+}
+
+#menu ul {
+	display: flex;
+	position: relative;
+	margin-bottom: 0;
+}
+
+#menu ul li {
+	flex: 1;
+	line-height: 35px;
+	color: #fff;
+	font-size: 14px;
+	cursor: pointer;
+	text-align: center;
+	position: relative;
+	z-index: 2
+}
+
+#menu ul li a{
+	color: #fff;
+}
+#menu ul .active{
+	background-color: #f57527;
+}
+
+.menubg {
+	position: absolute;
+	background: #01bbff;
+	height: 35px;
+	top: 0;
+	z-index: 1;
+	transition: all .4s;
+	left: 0
+}
+
+#app{
+	margin-top:10px;
+}
+
+.chart-box #app p{
+	margin: 0 0 0 2%;
+	padding: 1% 1% 1% 1%;
+	float: left;
+	color: #FFF;
+	font-size: 28px;
+	font-weight:bold;
+	border: 2px solid #bfefff;
+	text-align: center;
+	background-color: #002040;
+}
+
+.chart-box #app p span{
+	margin: auto;
+	color: #e53c07;
+	font-size: 16px;
+
+}
+
+#app .bootstrap-select{
+	float: right;
+	font-size: 16px;
+	background-color: #142131;
+	color: #4788fb;
+	margin: 20px 20px 0 0;
+}
+
