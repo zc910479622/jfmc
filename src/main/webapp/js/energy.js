@@ -77,6 +77,7 @@ function setZArrayData() {
             }
         }
     });
+    ReadTime = arrayxvalues[arrayxvalues.length-1];
     $(arrayxvalues).each(function (i, value) {
         var yValue = 0;
         $(energyData).each(function (j, obj) {
